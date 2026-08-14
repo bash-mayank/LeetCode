@@ -20,6 +20,7 @@ class Solution {
 
         for( int i = start ; i<nums.length; i++){
             if(i> start && nums[i] == nums[i-1]) continue;
+            if (sum + nums[i] > target) break;
             current.add(nums[i]);
             sum = sum + nums[i];
             backtrack(i+1, result, current, nums, sum, target);
